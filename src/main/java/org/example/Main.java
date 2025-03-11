@@ -129,7 +129,7 @@ public class Main {
 
     // Метод для розрахунку середнього арифметичного
     private static double calculateAverage(int[][] matrix) {
-        int sum = 0;
+        double sum = 0;
         int count = 0;
 
         for (int[] row : matrix) {
@@ -139,7 +139,7 @@ public class Main {
             }
         }
 
-        return (double) sum / count;
+        return sum / count;
     }
 
     // Метод для розрахунку середнього геометричного
