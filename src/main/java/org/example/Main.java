@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Main {
 
-    // Константи для діапазону рандомних чисел
+    // Constants for the range of random numbers
     private static final int MIN_RANDOM_VALUE = -100;
     private static final int MAX_RANDOM_VALUE = 100;
 
@@ -12,14 +12,14 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Зчитування розмірів матриці
-        System.out.println("Введіть ширину матриці (не більше 20):");
+        System.out.println("Enter the matrix width (maximum 20):");
         int width = readValidDimension(scanner);
 
-        System.out.println("Введіть висоту матриці (не більше 20):");
+        System.out.println("Enter the height of the matrix (maximum 20):");
         int height = readValidDimension(scanner);
 
-        // Обираємо спосіб створення матриці
-        System.out.println("Оберіть спосіб створення матриці: 1 - ручний, 2 - рандомний:");
+        // Choosing a method for creating a matrix
+        System.out.println("Choose the method of creating the matrix: 1 - manual, 2 - random:");
         int choice = scanner.nextInt();
 
         int[][] matrix;
@@ -28,28 +28,28 @@ public class Main {
         } else if (choice == 2) {
             matrix = createMatrixRandomly(width, height);
         } else {
-            System.out.println("Неправильний вибір. Програма завершується.");
+            System.out.println("Incorrect selection. The program is ending.");
             return;
         }
 
-        System.out.println("Створена матриця:");
+        System.out.println("Created matrix:");
         printMatrix(matrix);
 
         int min = findMin(matrix);
         int max = findMax(matrix);
-        System.out.println("Мінімальне значення: " + min);
-        System.out.println("Максимальне значення: " + max);
+        System.out.println("Minimum value: " + min);
+        System.out.println("Maximum value: " + max);
 
         double average = calculateAverage(matrix);
-        System.out.printf("Середнє арифметичне: %.2f%n", average);
+        System.out.printf("Arithmetic mean: %.2f%n", average);
 
         double geometricMean = calculateGeometricMean(matrix);
-        System.out.printf("Середнє геометричне: %.2f%n", geometricMean);
+        System.out.printf("Geometric mean: %.2f%n", geometricMean);
 
         scanner.close();
     }
 
-    // Метод для зчитування коректного розміру матриці
+    // Method for reading the correct matrix size
     private static int readValidDimension(Scanner scanner) {
         int dimension;
         while (true) {
@@ -57,12 +57,12 @@ public class Main {
             if (dimension > 0 && dimension <= 20) {
                 break;
             }
-            System.out.println("Розмір повинен бути від 1 до 20. Спробуйте ще раз:");
+            System.out.println("The size must be between 1 and 20. Try again:");
         }
         return dimension;
     }
 
-    // Метод для створення матриці ручним чином
+    // Method for creating a matrix manually
     private static int[][] createMatrixManually(int width, int height, Scanner scanner) {
         int[][] matrix = new int[height][width];
         System.out.println("Введіть елементи матриці:");
@@ -77,7 +77,7 @@ public class Main {
         return matrix;
     }
 
-    // Метод для створення матриці рандомно
+    // Method for creating a random matrix
     private static int[][] createMatrixRandomly(int width, int height) {
         int[][] matrix = new int[height][width];
         Random random = new Random();
@@ -91,7 +91,7 @@ public class Main {
         return matrix;
     }
 
-    // Метод для виведення матриці
+    // Method for deriving a matrix
     private static void printMatrix(int[][] matrix) {
         for (int[] row : matrix) {
             for (int element : row) {
@@ -101,7 +101,7 @@ public class Main {
         }
     }
 
-    // Метод для пошуку мінімального значення
+    // Method for finding the minimum value
     private static int findMin(int[][] matrix) {
         int min = Integer.MAX_VALUE;
         for (int[] row : matrix) {
@@ -114,7 +114,7 @@ public class Main {
         return min;
     }
 
-    // Метод для пошуку максимального значення
+    // Method for finding the maximum value
     private static int findMax(int[][] matrix) {
         int max = Integer.MIN_VALUE;
         for (int[] row : matrix) {
@@ -127,7 +127,7 @@ public class Main {
         return max;
     }
 
-    // Метод для розрахунку середнього арифметичного
+    // Method for calculating the arithmetic mean
     private static double calculateAverage(int[][] matrix) {
         double sum = 0;
         int count = 0;
@@ -142,14 +142,14 @@ public class Main {
         return sum / count;
     }
 
-    // Метод для розрахунку середнього геометричного
+    // Method for calculating the geometric mean
     private static double calculateGeometricMean(int[][] matrix) {
         double product = 1.0;
         int count = 0;
 
         for (int[] row : matrix) {
             for (int element : row) {
-                if (element != 0) { // Уникати множення на нуль
+                if (element != 0) { // Avoid multiplication by zero
                     product *= Math.abs(element);
                     count++;
                 }
@@ -157,7 +157,7 @@ public class Main {
         }
 
         if (count == 0) {
-            return 0; // Якщо всі елементи дорівнюють нулю
+            return 0; // If all elements are zero
         }
 
         return Math.pow(product, 1.0 / count);
