@@ -1,5 +1,7 @@
 package org.university.model;
 
+import java.util.Objects;
+
 public class Human {
     private String firstName;
     private String lastName;
@@ -20,4 +22,20 @@ public class Human {
     public void setPatronymic(String patronymic) { this.patronymic = patronymic; }
     public Sex getSex() { return sex; }
     public void setSex(Sex sex) { this.sex = sex; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Human human = (Human) o;
+        return firstName.equals(human.firstName) &&
+                lastName.equals(human.lastName) &&
+                patronymic.equals(human.patronymic) &&
+                sex == human.sex;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, patronymic, sex);
+    }
 }
