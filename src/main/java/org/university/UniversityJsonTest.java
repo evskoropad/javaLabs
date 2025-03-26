@@ -8,7 +8,7 @@ public class UniversityJsonTest {
     public void testUniversityJsonSerialization(University oldUniversity) throws IOException {
         // Test JSON serialization of the passed university
         JsonManager jsonManager = new JsonManager();
-        String filePath = "test_university.json";
+        String filePath = "./test_university.json";
 
         jsonManager.writeUniversityToJson(oldUniversity, filePath);
         University newUniversity = jsonManager.readUniversityFromJson(filePath);

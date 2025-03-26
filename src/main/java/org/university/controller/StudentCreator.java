@@ -9,17 +9,21 @@ public class StudentCreator implements Creator<Student> {
     private String patronymic;
     private Sex sex;
     private String studentId;
+    private String recordBookNumber;
+    private String birthDate;
 
-    public StudentCreator(String firstName, String lastName, String patronymic, Sex sex, String studentId) {
+    public StudentCreator(String firstName, String lastName, String patronymic, Sex sex, String studentId, String recordBookNumber, String birthDate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.patronymic = patronymic;
         this.sex = sex;
         this.studentId = studentId;
+        this.recordBookNumber = recordBookNumber;
+        this.birthDate = birthDate;
     }
 
     @Override
     public Student create() {
-        return new Student(firstName, lastName, patronymic, sex, studentId);
+        return new Student(firstName, lastName, patronymic, sex, studentId, recordBookNumber, birthDate);
     }
 }

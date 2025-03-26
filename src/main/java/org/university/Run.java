@@ -4,6 +4,7 @@ import org.university.controller.*;
 import org.university.model.*;
 
 import org.university.view.UniversityView;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -17,7 +18,7 @@ public class Run {
         // Test JSON serialization
         UniversityJsonTest test = new UniversityJsonTest();
         try {
-            test.testUniversityJsonSerialization(university); // Передаємо університет у тест
+            test.testUniversityJsonSerialization(university); // Передаём университет у тест
             System.out.println("University JSON serialization successful");
         } catch (IOException e) {
             System.out.println("Error test execution: " + e.getMessage());
@@ -41,22 +42,23 @@ public class Run {
 
         // Create students
         StudentCreator[] students1 = {
-                new StudentCreator("Sasha", "TikTok", "Olegovna", Sex.FEMALE, "123-21-1"),
-                new StudentCreator("Misha", "Bulkin", "Ilonovich", Sex.MALE, "123-21-2")
+                new StudentCreator("Sasha", "TikTok", "Olegovna", Sex.FEMALE, "123-21-1", "RB1231", "2003-05-15"),
+                new StudentCreator("Misha", "Bulkin", "Ilonovich", Sex.MALE, "123-21-2", "RB1232", "2004-08-22")
         };
         StudentCreator[] students2 = {
-                new StudentCreator("Justin", "Biber", "Grigirovich", Sex.MALE, "122-22-4"),
-                new StudentCreator("Max", "Pain", "MacCoffe", Sex.MALE, "121-24-2")
+                new StudentCreator("Justin", "Biber", "Grigirovich", Sex.MALE, "122-21-1", "RB1224", "2003-03-10"),
+                new StudentCreator("Max", "Pain", "MacCoffe", Sex.MALE, "122-21-2", "RB1212", "2003-11-05")
         };
         StudentCreator[] students3 = {
-                new StudentCreator("Anna", "Kovalenko", "Viktorivna", Sex.FEMALE, "124-23-1"),
-                new StudentCreator("Dmytro", "Shevchenko", "Petrovych", Sex.MALE, "124-23-2")
+                new StudentCreator("Anna", "Kovalenko", "Viktorivna", Sex.FEMALE, "121-21-1", "RB1241", "2004-07-19"),
+                new StudentCreator("Dmytro", "Shevchenko", "Petrovych", Sex.MALE, "121-21-2", "RB1242", "2004-09-30")
         };
 
         StudentCreator[] students4 = {
-                new StudentCreator("Olena", "Moroz", "Ivanivna", Sex.FEMALE, "125-24-3"),
-                new StudentCreator("Igor", "Pavlov", "Oleksandrovych", Sex.MALE, "125-24-4")
+                new StudentCreator("Olena", "Moroz", "Ivanivna", Sex.FEMALE, "125-21-1", "RB1253", "2003-01-25"),
+                new StudentCreator("Igor", "Pavlov", "Oleksandrovych", Sex.MALE, "125-21-2", "RB1254", "2003-12-12")
         };
+
         // Create groups
         GroupCreator group1 = new GroupCreator("AdvancedJava", groupCurator, students1);
         GroupCreator group2 = new GroupCreator("BasicJava", groupCurator, students2);

@@ -21,7 +21,9 @@ public class UniversityView {
 
                     for (Student student : group.getStudents()) {
                         System.out.println("        Student: " + getHumanName(student) +
-                                " (ID: " + student.getStudentId() + ")");
+                                " (ID: " + student.getStudentId() +
+                                ", Record Book: " + student.getRecordBookNumber() +
+                                ", Birth Date: " + student.getBirthDate() + ")");
                     }
                 }
             }
