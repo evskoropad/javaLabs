@@ -4,7 +4,6 @@ import db_student.db.DatabaseConnection;
 import db_student.model.Student;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class StudentService {
 
     private List<Student> fetchAllStudents() {
         List<Student> students = new ArrayList<>();
-        String query = "SELECT id, last_name, first_name, middle_name, birth_date, record_book_number FROM students_info"; // Оновлено назву таблиці
+        String query = "SELECT id, last_name, first_name, middle_name, birth_date, record_book_number FROM students_info";
 
         try (Connection conn = DatabaseConnection.getConnection();
              Statement stmt = conn.createStatement();

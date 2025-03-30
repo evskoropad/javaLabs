@@ -12,20 +12,20 @@ public class Main {
         StudentService service = new StudentService();
 
         while (true) {
-            System.out.println("Введіть номер місяця (1-12) або 0 для виходу:");
+            System.out.println("Enter month number (1-12) or 0 to exit:");
             int month = scanner.nextInt();
 
             if (month == 0) break;
             if (month < 1 || month > 12) {
-                System.out.println("Неправильний номер місяця!");
+                System.out.println("Wrong month number!");
                 continue;
             }
 
             List<Student> students = service.getStudentsByMonth(month);
             if (students.isEmpty()) {
-                System.out.println("Студентів, що народилися в цьому місяці, не знайдено.");
+                System.out.println("No students born in this month have been found.");
             } else {
-                System.out.println("Знайдені студенти:");
+                System.out.println("Known students:");
                 students.forEach(System.out::println);
             }
         }
