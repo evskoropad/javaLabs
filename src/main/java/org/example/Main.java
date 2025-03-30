@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Зчитування розмірів матриці
+        // Reading matrix dimensions
         System.out.println("Enter the matrix width (maximum 20):");
         int width = readValidDimension(scanner);
 
@@ -65,11 +65,11 @@ public class Main {
     // Method for creating a matrix manually
     private static int[][] createMatrixManually(int width, int height, Scanner scanner) {
         int[][] matrix = new int[height][width];
-        System.out.println("Введіть елементи матриці:");
+        System.out.println("Enter matrix elements:");
 
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                System.out.printf("Елемент [%d][%d]: ", i + 1, j + 1);
+                System.out.printf("Element [%d][%d]: ", i + 1, j + 1);
                 matrix[i][j] = scanner.nextInt();
             }
         }
