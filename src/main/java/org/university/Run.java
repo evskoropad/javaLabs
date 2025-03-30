@@ -6,7 +6,7 @@ import org.university.model.*;
 import org.university.view.UniversityView;
 
 import java.io.IOException;
-import java.util.Scanner;
+
 
 public class Run {
     public static void main(String[] args) {
@@ -18,7 +18,7 @@ public class Run {
         // Test JSON serialization
         UniversityJsonTest test = new UniversityJsonTest();
         try {
-            test.testUniversityJsonSerialization(university); // Передаём университет у тест
+            test.testUniversityJsonSerialization(university); // Pass the university to the test
             System.out.println("University JSON serialization successful");
         } catch (IOException e) {
             System.out.println("Error test execution: " + e.getMessage());
