@@ -13,27 +13,27 @@ public class Run {
 
     public static University createTypicalUniversity() {
         // Create university rector
-        Human rector = new HumanCreator("John", "Smith", "William", Sex.MALE).create();
+        Human rector = new HumanCreator("John", "Smith", "Grigorivich", Sex.MALE).create();
 
         // Create faculty dean
-        Human dean = new HumanCreator("Michael", "Johnson", "Robert", Sex.MALE).create();
+        Human dean = new HumanCreator("Michael", "Johnson", "Abob", Sex.MALE).create();
 
         // Create department head
-        Human departmentHead = new HumanCreator("Sarah", "Davis", "Jane", Sex.FEMALE).create();
+        Human departmentHead = new HumanCreator("Sarah", "Bobrova", "Sergeyevich", Sex.FEMALE).create();
 
         // Create group curator
-        Human groupCurator = new HumanCreator("David", "Wilson", "James", Sex.MALE).create();
+        Human groupCurator = new HumanCreator("David", "Babrash", "Olegocich", Sex.MALE).create();
 
         // Create students
         StudentCreator[] studentCreators = {
-                new StudentCreator("Alice", "Brown", "Mary", Sex.FEMALE, "123-21-1"),
-                new StudentCreator("Bob", "Taylor", "John", Sex.MALE, "122-22-4"),
-                new StudentCreator("Charlie", "Anderson", "Thomas", Sex.MALE, "121-24-2")
+                new StudentCreator("Alice", "Brown", "", Sex.FEMALE, "25"),
+                new StudentCreator("Bob", "Taylor", "", Sex.MALE, "3"),
+                new StudentCreator("Charlie", "Anderson", "", Sex.MALE, "4")
         };
 
 
         // Create group
-        GroupCreator groupCreator = new GroupCreator("CS-101", groupCurator, studentCreators);
+        GroupCreator groupCreator = new GroupCreator("123-21-1", groupCurator, studentCreators);
 
         // Create department
         DepartmentCreator departmentCreator = new DepartmentCreator(
